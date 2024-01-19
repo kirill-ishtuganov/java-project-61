@@ -7,13 +7,21 @@ public class App {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n0 - Exit\nYour choice:");
+        System.out.print("Please enter the game number and press Enter.\n"
+                + "1 - Greet\n"
+                + "2 - Even\n"
+                + "0 - Exit\n"
+                + "Your choice: ");
         int beginning = scanner.nextInt();
-        if(beginning == 1) {
-            System.out.println("Welcome to the Brain Games!");
-            Cli.getUserName(System.in);
-        } else if(beginning == 0) {
-            System. exit(0);
+        switch (beginning) {
+            case 1:
+                Cli.getUserName(System.in);
+                System.exit(0);
+            case 2:
+                Even.parityCheck(System.in);
+                System.exit(0);
+            default:
+                System.exit(0);
         }
     }
 }
