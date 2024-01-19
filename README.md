@@ -6,5 +6,5 @@
 (https://api.codeclimate.com/v1/badges/8dec38db45fe0845fce4/maintainability)]
 (https://codeclimate.com/github/wavecloudzzz/java-project-61/maintainability)
 
-### Зroject demonstration
+### Project demonstration
 https://asciinema.org/a/dfHquXApOdg1XRnPjpUgGZm6P
