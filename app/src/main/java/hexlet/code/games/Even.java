@@ -1,14 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import java.io.InputStream;
 import java.util.Random;
 
 public class Even {
-    public static void parityCheck(InputStream args) {
+    public static void parityCheck() {
 
-        Cli.getUserName(System.in);
-
+        Cli.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         Random r = new Random();

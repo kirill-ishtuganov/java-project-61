@@ -7,4 +7,7 @@
 (https://codeclimate.com/github/wavecloudzzz/java-project-61/maintainability)
 
 ### Project demonstration
+Even
 https://asciinema.org/a/dfHquXApOdg1XRnPjpUgGZm6P
+Calc
+https://asciinema.org/a/632675
