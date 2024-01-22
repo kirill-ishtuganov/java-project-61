@@ -2,6 +2,7 @@ package hexlet.code;
 
 import java.io.InputStream;
 import java.util.Scanner;
+
 public class Cli {
     public static String userName;
 
