@@ -1,10 +1,14 @@
-package hexlet.code.games;
-
-import hexlet.code.Cli;
+package hexlet.code;
 
 import java.util.Scanner;
 
 public class Engine {
+    public static void startTheGame(String question) {
+
+        Cli.getUserName();
+        System.out.println(question);
+    }
+
     public static void questioning(String expression, String correctAnswer) {
 
         Scanner scanner = new Scanner(System.in);
@@ -20,5 +24,10 @@ public class Engine {
                     + "'.\nLet's try again, " + Cli.userName + "!");
             System.exit((0));
         }
+    }
+
+    public static void finishTheGame() {
+        System.out.println("Congratulations, " + Cli.userName + "!");
+        System.exit((0));
     }
 }

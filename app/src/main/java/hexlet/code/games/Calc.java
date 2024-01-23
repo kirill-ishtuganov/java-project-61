@@ -1,17 +1,15 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
     public static void expressionEvaluation() {
 
-        Cli.getUserName();
-        System.out.println("What is the result of the expression?");
-
-        Random r = new Random();
+        Engine.startTheGame("What is the result of the expression?");
 
         for (var i = 0; i < 3; i++) {
+            Random r = new Random();
             int a = r.nextInt(20);
             int b = r.nextInt(20);
             int c = r.nextInt(3) + 1;
@@ -35,8 +33,6 @@ public class Calc {
             String expression = a + symbol + b;
             Engine.questioning(expression, String.valueOf(correctAnswer));
         }
-
-        System.out.println("Congratulations, " + Cli.userName + "!");
-        System.exit((0));
+        Engine.finishTheGame();
     }
 }
