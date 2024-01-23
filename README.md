@@ -9,7 +9,12 @@
 ### Project demonstration
 Even
 https://asciinema.org/a/dfHquXApOdg1XRnPjpUgGZm6P
+
 Calc
 https://asciinema.org/a/632675
+
 GCD
 https://asciinema.org/a/632849
+
+Progression
+https://asciinema.org/a/632884
