@@ -8,14 +8,18 @@ public class Prime {
         Engine.startTheGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            int number = (int) (Math.random() * 30) + 2;
+            var maxNumber = 30;
+            int number = (int) (Math.random() * maxNumber) + 2;
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();
     }
 
     public static String isSimple(int number) {
-        if (number == 2 || number == 4) {
+        var exception1 = 2;
+        var exception2 = 4;
+
+        if (number == exception1 || number == exception2) {
             return "no";
         }
 

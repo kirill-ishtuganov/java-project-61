@@ -8,9 +8,16 @@ public class Progression {
         Engine.startTheGame("What number is missing in the progression?");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            int lengthOfPr = (int) (Math.random() * 5) + 5;
-            int firstNumberInPr = (int) (Math.random() * 20) + 1;
+            var length = 5;
+            var minLength = 5;
+            int lengthOfPr = (int) (Math.random() * length) + minLength;
+
+            var maxNumber = 20;
+            int firstNumberInPr = (int) (Math.random() * maxNumber) + 1;
+
+            var stepSize = 6;
             int step = (int) (Math.random() * 6) + 2;
+
             int missingIndex = (int) (Math.random() * lengthOfPr);
             String expression = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
             int correctAnswer = firstNumberInPr + (step * (missingIndex + 1));

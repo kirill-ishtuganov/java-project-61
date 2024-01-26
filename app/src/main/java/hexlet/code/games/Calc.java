@@ -6,9 +6,12 @@ public class Calc {
         Engine.startTheGame("What is the result of the expression?");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            int a = (int) (Math.random() * 20) + 1;
-            int b = (int) (Math.random() * 20) + 1;
-            int c = (int) (Math.random() * 3);
+            var maxNumber = 20;
+            var numberOfMathActions = 3;
+
+            int a = (int) (Math.random() * maxNumber) + 1;
+            int b = (int) (Math.random() * maxNumber) + 1;
+            int c = (int) (Math.random() * numberOfMathActions);
             String symbol;
 
             int correctAnswer = switch (c) {
