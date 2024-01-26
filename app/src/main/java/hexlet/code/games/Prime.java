@@ -10,22 +10,18 @@ public class Prime {
 
         for (var i = 0; i < 3; i++) {
             Random r = new Random();
-            int number = r.nextInt(100);
+            int number = r.nextInt(3, 72);
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();
     }
 
     public static String isSimple(Integer number) {
-        if (number < 2) {
-            return "no";
-        } else {
-            for (int i = 2; i < number / 2; i++) {
-                if (number % i == 0) {
-                    return "no";
-                }
+        for (int i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
+                return "no";
             }
-            return "yes";
         }
+        return "yes";
     }
 }
