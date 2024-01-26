@@ -12,7 +12,7 @@ public class Even {
             Random r = new Random();
             int number = r.nextInt(20);
             String correctAnswer = (number % 2) == 0 ? "yes" : "no";
-            Engine.questioning(String.valueOf(number), correctAnswer);
+            Engine.getQuestion(String.valueOf(number), correctAnswer);
         }
         Engine.finishTheGame();
     }

@@ -18,3 +18,6 @@ https://asciinema.org/a/632849
 
 Progression
 https://asciinema.org/a/632884
+
+Prime
+https://asciinema.org/a/633534

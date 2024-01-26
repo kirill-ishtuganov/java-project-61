@@ -31,7 +31,7 @@ public class Calc {
             }
 
             String expression = a + symbol + b;
-            Engine.questioning(expression, String.valueOf(correctAnswer));
+            Engine.getQuestion(expression, String.valueOf(correctAnswer));
         }
         Engine.finishTheGame();
     }

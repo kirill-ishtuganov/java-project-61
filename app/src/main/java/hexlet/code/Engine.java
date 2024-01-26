@@ -9,7 +9,7 @@ public class Engine {
         System.out.println(question);
     }
 
-    public static void questioning(String expression, String correctAnswer) {
+    public static void getQuestion(String expression, String correctAnswer) {
 
         Scanner scanner = new Scanner(System.in);
 

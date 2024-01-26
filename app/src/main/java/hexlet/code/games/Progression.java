@@ -11,13 +11,13 @@ public class Progression {
 
         for (var i = 0; i < 3; i++) {
             Random r = new Random();
-            int lengthOfPr = r.nextInt(5, 9);
+            int lengthOfPr = r.nextInt(5, 10);
             int firstNumberInPr = r.nextInt(1, 20);
             int step = r.nextInt(2, 8);
-            int missingIndex = r.nextInt(lengthOfPr - 1);
+            int missingIndex = r.nextInt(lengthOfPr);
             String expression = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
             int correctAnswer = firstNumberInPr + (step * (missingIndex + 1));
-            Engine.questioning(expression, String.valueOf(correctAnswer));
+            Engine.getQuestion(expression, String.valueOf(correctAnswer));
         }
         Engine.finishTheGame();
     }
@@ -28,7 +28,7 @@ public class Progression {
         joiner.add(String.valueOf(firstNumber));
         int currentNumber = firstNumber;
 
-        for (var i = 0; i <= prLength; i++) {
+        for (var i = 0; i < prLength; i++) {
             if (i != missingIndex) {
                 currentNumber += step;
                 joiner.add(String.valueOf(currentNumber));

@@ -14,7 +14,7 @@ public class GCD {
             int b = r.nextInt(1, 101);
             String expression = a + ", " + b;
             int correctAnswer = gcdAlgorithm(a, b);
-            Engine.questioning(expression, String.valueOf(correctAnswer));
+            Engine.getQuestion(expression, String.valueOf(correctAnswer));
         }
         Engine.finishTheGame();
     }
