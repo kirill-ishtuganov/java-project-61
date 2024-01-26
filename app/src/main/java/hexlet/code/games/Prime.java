@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
 
 public class Prime {
     public static void checkingForAPrimeNumber() {
@@ -9,10 +8,7 @@ public class Prime {
         Engine.startTheGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            Random r = new Random();
-            int minNumber = 3;
-            int maxNumberMinusOne = 72;
-            int number = r.nextInt(minNumber, maxNumberMinusOne);
+            int number = (int) (Math.random() * 30) + 3;
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();

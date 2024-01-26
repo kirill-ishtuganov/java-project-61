@@ -1,26 +1,17 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
 import java.util.StringJoiner;
 
 public class Progression {
     public static void findingANumberInProgression() {
-
         Engine.startTheGame("What number is missing in the progression?");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            Random r = new Random();
-            int minLength = 5;
-            int maxLength = 10;
-            int lengthOfPr = r.nextInt(minLength, maxLength);
-            int minNumber = 1;
-            int maxNumberMinusOne = 20;
-            int firstNumberInPr = r.nextInt(minNumber, maxNumberMinusOne);
-            int minStepSize = 2;
-            int maxStepSizeMinusOne = 8;
-            int step = r.nextInt(minStepSize, maxStepSizeMinusOne);
-            int missingIndex = r.nextInt(lengthOfPr);
+            int lengthOfPr = (int) (Math.random() * 5) + 5;
+            int firstNumberInPr = (int) (Math.random() * 20) + 1;
+            int step = (int) (Math.random() * 6) + 2;
+            int missingIndex = (int) (Math.random() * lengthOfPr);
             String expression = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
             int correctAnswer = firstNumberInPr + (step * (missingIndex + 1));
             Engine.getQuestion(expression, String.valueOf(correctAnswer));

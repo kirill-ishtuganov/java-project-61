@@ -8,13 +8,20 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n"
-                + "5 - Progression\n6 - Prime\n0 - Exit\nYour choice: ");
+        System.out.print("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                3 - Calc
+                4 - GCD
+                5 - Progression
+                6 - Prime
+                0 - Exit
+                Your choice:\s""");
         int beginning = scanner.nextInt();
+
         switch (beginning) {
             case 1:
                 Engine.startTheGame();
