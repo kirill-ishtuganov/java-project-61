@@ -12,7 +12,7 @@ public class GCD {
             Random r = new Random();
             int a = r.nextInt(1, 101);
             int b = r.nextInt(1, 101);
-            String expression = a + ", " + b;
+            String expression = a + " " + b;
             int correctAnswer = gcdAlgorithm(a, b);
             Engine.getQuestion(expression, String.valueOf(correctAnswer));
         }
