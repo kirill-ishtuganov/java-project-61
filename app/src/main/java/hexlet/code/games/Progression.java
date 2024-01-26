@@ -9,11 +9,17 @@ public class Progression {
 
         Engine.startTheGame("What number is missing in the progression?");
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
             Random r = new Random();
-            int lengthOfPr = r.nextInt(5, 10);
-            int firstNumberInPr = r.nextInt(1, 20);
-            int step = r.nextInt(2, 8);
+            int minLength = 5;
+            int maxLength = 10;
+            int lengthOfPr = r.nextInt(minLength, maxLength);
+            int minNumber = 1;
+            int maxNumberMinusOne = 20;
+            int firstNumberInPr = r.nextInt(minNumber, maxNumberMinusOne);
+            int minStepSize = 2;
+            int maxStepSizeMinusOne = 8;
+            int step = r.nextInt(minStepSize, maxStepSizeMinusOne);
             int missingIndex = r.nextInt(lengthOfPr);
             String expression = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
             int correctAnswer = firstNumberInPr + (step * (missingIndex + 1));

@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
@@ -13,8 +17,7 @@ public class App {
         int beginning = scanner.nextInt();
         switch (beginning) {
             case 1:
-                Cli.getUserName();
-                System.exit(0);
+                Engine.startTheGame();
             case 2:
                 Even.parityCheck();
             case 3:

@@ -8,9 +8,11 @@ public class Prime {
 
         Engine.startTheGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
             Random r = new Random();
-            int number = r.nextInt(3, 72);
+            int minNumber = 3;
+            int maxNumberMinusOne = 72;
+            int number = r.nextInt(minNumber, maxNumberMinusOne);
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();
