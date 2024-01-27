@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     static final int QUESTIONS = 3;
+    static final int MAX = 20;
 
     public static void startTheGame(String question) {
         Cli.setUserName();
@@ -18,6 +19,10 @@ public class Engine {
 
     public static int getNumberOfQuestions() {
         return QUESTIONS;
+    }
+
+    public static int getMaxNumber() {
+        return MAX;
     }
 
     public static void getQuestion(String expression, String correctAnswer) {

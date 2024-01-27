@@ -4,20 +4,19 @@ import hexlet.code.Engine;
 import java.util.StringJoiner;
 
 public class Progression {
+
+    static final int LENGTH = 5;
+    // first number = 5;
+    static  final  int FIRST = 5;
+    // max size step = 6;
+    static final int STEP = 6;
     public static void findingANumberInProgression() {
         Engine.startTheGame("What number is missing in the progression?");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            var length = 5;
-            var minLength = 5;
-            int lengthOfPr = (int) (Math.random() * length) + minLength;
-
-            var maxNumber = 20;
-            int firstNumberInPr = (int) (Math.random() * maxNumber) + 1;
-
-            var stepSize = 6;
-            int step = (int) (Math.random() * 6) + 2;
-
+            int lengthOfPr = (int) (Math.random() * LENGTH) + FIRST;
+            int firstNumberInPr = (int) (Math.random() * Engine.getMaxNumber()) + 1;
+            int step = (int) (Math.random() * STEP) + 2;
             int missingIndex = (int) (Math.random() * lengthOfPr);
             String expression = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
             int correctAnswer = firstNumberInPr + (step * (missingIndex + 1));

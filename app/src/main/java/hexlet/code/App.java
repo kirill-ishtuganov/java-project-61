@@ -36,6 +36,7 @@ public class App {
             case 6:
                 Prime.checkingForAPrimeNumber();
             default:
+                System.exit(0);
         }
     }
 }

@@ -3,23 +3,21 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
+
+    static final int EXCEPTION = 4;
     public static void checkingForAPrimeNumber() {
 
         Engine.startTheGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            var maxNumber = 30;
-            int number = (int) (Math.random() * maxNumber) + 2;
+            int number = (int) (Math.random() * Engine.getMaxNumber()) + 2;
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();
     }
 
     public static String isSimple(int number) {
-        var exception1 = 2;
-        var exception2 = 4;
-
-        if (number == exception1 || number == exception2) {
+        if (number == 2 || number == EXCEPTION) {
             return "no";
         }
 

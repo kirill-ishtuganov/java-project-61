@@ -7,9 +7,8 @@ public class GCD {
         Engine.startTheGame("Find the greatest common divisor of given numbers.");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            var maxNumber = 100;
-            int a = (int) (Math.random() * maxNumber) + 1;
-            int b = (int) (Math.random() * maxNumber) + 1;
+            int a = (int) (Math.random() * Engine.getMaxNumber()) + 1;
+            int b = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             String expression = a + " " + b;
             int correctAnswer = gcdAlgorithm(a, b);
             Engine.getQuestion(expression, String.valueOf(correctAnswer));
