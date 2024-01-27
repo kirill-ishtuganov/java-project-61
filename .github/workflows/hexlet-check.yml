@@ -20,5 +20,8 @@ jobs:
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
+        runs:
+          using: 'node20'
+          main: 'main.js'
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}

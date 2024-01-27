@@ -22,6 +22,7 @@ public class App {
                 Your choice:\s""");
         int beginning = scanner.nextInt();
 
+        //whi
         switch (beginning) {
             case 1:
                 Engine.startTheGame();
