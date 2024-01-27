@@ -8,6 +8,14 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+
+    static final int EXIT = 0;
+    static final int GREET = 1;
+    static final int EVEN = 2;
+    static final int CALC = 3;
+    static final int GREATEST = 4;
+    static final int PROGRESSION = 5;
+    static final int PRIME = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("""
@@ -22,22 +30,22 @@ public class App {
                 Your choice:\s""");
         int beginning = scanner.nextInt();
 
-        //whi
         switch (beginning) {
-            case 1:
+            case GREET:
                 Engine.startTheGame();
-            case 2:
+            case EVEN:
                 Even.parityCheck();
-            case 3:
+            case CALC:
                 Calc.expressionEvaluation();
-            case 4:
+            case GREATEST:
                 GCD.findTheGreatestCommonDivisor();
-            case 5:
+            case PROGRESSION:
                 Progression.findingANumberInProgression();
-            case 6:
+            case PRIME:
                 Prime.checkingForAPrimeNumber();
-            default:
+            case EXIT:
                 System.exit(0);
+            default:
         }
     }
 }
