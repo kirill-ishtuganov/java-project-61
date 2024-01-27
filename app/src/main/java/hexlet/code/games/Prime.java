@@ -10,14 +10,14 @@ public class Prime {
         Engine.startTheGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            int number = (int) (Math.random() * Engine.getMaxNumber()) + 2;
+            int number = (int) (Math.random() * Engine.getMaxNumber()) + 3;
             Engine.getQuestion(String.valueOf(number), isSimple(number));
         }
         Engine.finishTheGame();
     }
 
     public static String isSimple(int number) {
-        if (number == 2 || number == EXCEPTION) {
+        if (number == EXCEPTION) {
             return "no";
         }
 
