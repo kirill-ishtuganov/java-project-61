@@ -5,9 +5,9 @@ public class Calc {
 
     static final int ACTIONS = 3;
     public static void expressionEvaluation() {
-        Engine.startTheGame("What is the result of the expression?");
+        String[][] questions = new String[Engine.getNumberOfQuestions()][2];
 
-        for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
+        for (var i = 0; i < questions.length; i++) {
             int a = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             int b = (int) (Math.random() * Engine.getMaxNumber()) + 1;
             int c = (int) (Math.random() * ACTIONS);
@@ -27,10 +27,9 @@ public class Calc {
                     yield a * b;
                 }
             };
-
-            String expression = a + symbol + b;
-            Engine.getQuestion(expression, String.valueOf(correctAnswer));
+            questions[i][0] = a + symbol + b;
+            questions[i][1] = String.valueOf(correctAnswer);
         }
-        Engine.finishTheGame();
+        Engine.getQuestion("What is the result of the expression?", questions);
     }
 }

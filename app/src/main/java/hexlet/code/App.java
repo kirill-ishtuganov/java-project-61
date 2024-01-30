@@ -8,16 +8,7 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-
-    static final int EXIT = 0;
-    static final int GREET = 1;
-    static final int EVEN = 2;
-    static final int CALC = 3;
-    static final int GREATEST = 4;
-    static final int PROGRESSION = 5;
-    static final int PRIME = 6;
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -28,22 +19,28 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
+        gameEntryPoint();
+    }
+
+    public static void gameEntryPoint() {
+        Scanner scanner = new Scanner(System.in);
         int beginning = scanner.nextInt();
 
         switch (beginning) {
-            case GREET:
-                Engine.startTheGame();
-            case EVEN:
+            case 0:
+                Cli.setUserName();
+                System.exit(0);
+            case 1:
                 Even.parityCheck();
-            case CALC:
+            case 2:
                 Calc.expressionEvaluation();
-            case GREATEST:
+            case 3:
                 GCD.findTheGreatestCommonDivisor();
-            case PROGRESSION:
+            case 4:
                 Progression.findingANumberInProgression();
-            case PRIME:
+            case 5:
                 Prime.checkingForAPrimeNumber();
-            case EXIT:
+            case 6:
                 System.exit(0);
             default:
         }

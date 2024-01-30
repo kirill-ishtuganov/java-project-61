@@ -4,16 +4,16 @@ import hexlet.code.Engine;
 
 public class GCD {
     public static void findTheGreatestCommonDivisor() {
-        Engine.startTheGame("Find the greatest common divisor of given numbers.");
+        String[][] questions = new String[Engine.getNumberOfQuestions()][2];
 
-        for (var i = 0; i < Engine.getNumberOfQuestions(); i++) {
-            int a = (int) (Math.random() * Engine.getMaxNumber()) + 1;
-            int b = (int) (Math.random() * Engine.getMaxNumber()) + 1;
-            String expression = a + " " + b;
+        for (var i = 0; i < questions.length; i++) {
+            int a = (int) (Math.random() * Engine.getMaxNumber() * 2) + 1;
+            int b = (int) (Math.random() * Engine.getMaxNumber() * 2) + 1;
             int correctAnswer = gcdAlgorithm(a, b);
-            Engine.getQuestion(expression, String.valueOf(correctAnswer));
+            questions[i][0] = a + " " + b;
+            questions[i][1] = String.valueOf(correctAnswer);
         }
-        Engine.finishTheGame();
+        Engine.getQuestion("Find the greatest common divisor of given numbers.", questions);
     }
 
     public static int gcdAlgorithm(int a, int b) {

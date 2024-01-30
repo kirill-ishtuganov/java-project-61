@@ -7,16 +7,6 @@ public class Engine {
     static final int QUESTIONS = 3;
     static final int MAX = 20;
 
-    public static void startTheGame(String question) {
-        Cli.setUserName();
-        System.out.println(question);
-    }
-
-    public static void startTheGame() {
-        Cli.setUserName();
-        System.exit(0);
-    }
-
     public static int getNumberOfQuestions() {
         return QUESTIONS;
     }
@@ -25,22 +15,23 @@ public class Engine {
         return MAX;
     }
 
-    public static void getQuestion(String expression, String correctAnswer) {
-        System.out.print("Question: " + expression + "\nYour answer: ");
+    public static void getQuestion(String question, String[][] questions) {
+        Cli.setUserName();
+        System.out.println(question);
 
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
+        for (String[] strings : questions) {
+            System.out.print("Question: " + strings[0] + "\nYour answer: ");
+            Scanner scanner = new Scanner(System.in);
+            String answer = scanner.nextLine();
 
-        if (answer.equals(correctAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer
-                    + "'.\nLet's try again, " + Cli.getUserName() + "!");
-            System.exit((0));
+            if (answer.equals(strings[1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + strings[1]
+                        + "'.\nLet's try again, " + Cli.getUserName() + "!");
+                System.exit((0));
+            }
         }
-    }
-
-    public static void finishTheGame() {
         System.out.println("Congratulations, " + Cli.getUserName() + "!");
         System.exit((0));
     }
