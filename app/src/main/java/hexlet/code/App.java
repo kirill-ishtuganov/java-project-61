@@ -28,20 +28,20 @@ public class App {
 
         switch (beginning) {
             case 0:
-                Cli.setUserName();
                 System.exit(0);
             case 1:
-                Even.parityCheck();
-            case 2:
-                Calc.expressionEvaluation();
-            case 3:
-                GCD.findTheGreatestCommonDivisor();
-            case 4:
-                Progression.findingANumberInProgression();
-            case 5:
-                Prime.checkingForAPrimeNumber();
-            case 6:
+                Cli.setUserName();
                 System.exit(0);
+            case 2:
+                Even.parityCheck();
+            case 3:
+                Calc.expressionEvaluation();
+            case 4:
+                GCD.findTheGreatestCommonDivisor();
+            case 5:
+                Progression.findingANumberInProgression();
+            case 6:
+                Prime.checkingForAPrimeNumber();
             default:
         }
     }
