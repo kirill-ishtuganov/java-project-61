@@ -1,32 +1,39 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.StringJoiner;
 
 public class Progression {
+    public static void start() {
+        String[][] questionsAndAnswers = new String[Engine.QUESTIONS][2];
+        for (var i = 0; i < questionsAndAnswers.length; i++) {
+            questionsAndAnswers[i] = generateRoundData();
+        }
+        Engine.getQuestion("What number is missing in the progression?", questionsAndAnswers);
+    }
 
-    // size of progression
-    static final int LENGTH = 5;
+    // max size of progression
+    static final int MAX = 10;
     // min size of progression;
     static  final  int MIN = 5;
     // max size step;
     static final int STEP = 6;
-    public static void findingANumberInProgression() {
-        String[][] questions = new String[Engine.getNumberOfQuestions()][2];
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
 
-        for (var i = 0; i < questions.length; i++) {
-            int lengthOfPr = (int) (Math.random() * LENGTH) + MIN;
-            int firstNumberInPr = (int) (Math.random() * Engine.getMaxNumber()) + 1;
-            int step = (int) (Math.random() * STEP) + 2;
-            int missingIndex = (int) (Math.random() * lengthOfPr);
-            questions[i][0] = getProgression(lengthOfPr, firstNumberInPr, step, missingIndex);
-            questions[i][1] = String.valueOf(firstNumberInPr + (step * (missingIndex + 1)));
-        }
-        Engine.getQuestion("What number is missing in the progression?", questions);
+        int prLength = Utils.getRandomNumber(MIN, MAX);
+        int firstNumber = Utils.getRandomNumber();
+        int step = Utils.getRandomNumber(STEP);
+        int missingIndex = Utils.getRandomNumber(prLength - 1);
+
+        questionAndAnswer[0] = getProgression(prLength, firstNumber, step, missingIndex);
+        questionAndAnswer[1] = String.valueOf(firstNumber + (step * (missingIndex + 1)));
+        return questionAndAnswer;
     }
 
     public static String getProgression(int prLength, int firstNumber, int step, int missingIndex) {
-
         StringJoiner joiner = new StringJoiner(" ");
         joiner.add(String.valueOf(firstNumber));
         int currentNumber = firstNumber;

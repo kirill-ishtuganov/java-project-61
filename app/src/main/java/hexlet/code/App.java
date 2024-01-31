@@ -25,29 +25,30 @@ public class App {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        gameEntryPoint();
-    }
-
-    public static void gameEntryPoint() {
         Scanner scanner = new Scanner(System.in);
         int beginning = scanner.nextInt();
 
         switch (beginning) {
             case 0:
-                System.exit(0);
+                return;
             case 1:
-                Cli.setUserName();
-                System.exit(0);
+                Cli.greet();
+                return;
             case EVEN:
-                Even.parityCheck();
+                Even.start();
+                return;
             case CALC:
-                Calc.expressionEvaluation();
+                Calc.start();
+                return;
             case GREATEST:
-                GCD.findTheGreatestCommonDivisor();
+                GCD.start();
+                return;
             case PROGRESSION:
-                Progression.findingANumberInProgression();
+                Progression.start();
+                return;
             case PRIME:
-                Prime.checkingForAPrimeNumber();
+                Prime.start();
+                return;
             default:
         }
     }

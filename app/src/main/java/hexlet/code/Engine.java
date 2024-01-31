@@ -4,35 +4,25 @@ import java.util.Scanner;
 
 public class Engine {
 
-    static final int QUESTIONS = 3;
-    static final int MAX = 20;
+    public static final int QUESTIONS = 3;
 
-    public static int getNumberOfQuestions() {
-        return QUESTIONS;
-    }
+    public static void getQuestion(String rules, String[][] questionsAndAnswers) {
+        String userName = Cli.greet();
+        System.out.println(rules);
 
-    public static int getMaxNumber() {
-        return MAX;
-    }
-
-    public static void getQuestion(String question, String[][] questions) {
-        Cli.setUserName();
-        System.out.println(question);
-
-        for (String[] strings : questions) {
-            System.out.print("Question: " + strings[0] + "\nYour answer: ");
+        for (String[] task : questionsAndAnswers) {
+            System.out.print("Question: " + task[0] + "\nYour answer: ");
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.nextLine();
 
-            if (answer.equals(strings[1])) {
+            if (answer.equals(task[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + strings[1]
-                        + "'.\nLet's try again, " + Cli.getUserName() + "!");
-                System.exit((0));
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + task[1]
+                        + "'.\nLet's try again, " + userName + "!");
+                return;
             }
         }
-        System.out.println("Congratulations, " + Cli.getUserName() + "!");
-        System.exit((0));
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

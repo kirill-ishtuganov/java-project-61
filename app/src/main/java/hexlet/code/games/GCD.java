@@ -1,19 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
-    public static void findTheGreatestCommonDivisor() {
-        String[][] questions = new String[Engine.getNumberOfQuestions()][2];
 
-        for (var i = 0; i < questions.length; i++) {
-            int a = (int) (Math.random() * Engine.getMaxNumber() * 2) + 1;
-            int b = (int) (Math.random() * Engine.getMaxNumber() * 2) + 1;
-            int correctAnswer = gcdAlgorithm(a, b);
-            questions[i][0] = a + " " + b;
-            questions[i][1] = String.valueOf(correctAnswer);
+    private static final int MAX = 100;
+    public static void start() {
+        String[][] questionsAndAnswers = new String[Engine.QUESTIONS][2];
+        for (var i = 0; i < questionsAndAnswers.length; i++) {
+            questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.getQuestion("Find the greatest common divisor of given numbers.", questions);
+        Engine.getQuestion("Find the greatest common divisor of given numbers.", questionsAndAnswers);
+    }
+
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
+        int a = Utils.getRandomNumber(MAX);
+        int b = Utils.getRandomNumber(MAX);
+        int correctAnswer = gcdAlgorithm(a, b);
+        questionAndAnswer[0] = a + " " + b;
+        questionAndAnswer[1] = String.valueOf(correctAnswer);
+        return questionAndAnswer;
     }
 
     public static int gcdAlgorithm(int a, int b) {
