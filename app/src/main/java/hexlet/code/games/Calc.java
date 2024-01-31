@@ -19,15 +19,15 @@ public class Calc {
         String[] questionAndAnswer = new String[2];
         int a = Utils.getRandomNumber();
         int b = Utils.getRandomNumber();
-        int c = Utils.getRandomNumber(ACTIONS);
+        int c = Utils.getRandomNumber(ACTIONS) - 1;
         String symbol;
 
         int correctAnswer = switch (c) {
-            case 2 -> {
+            case 1 -> {
                 symbol = " + ";
                 yield a + b;
             }
-            case 3 -> {
+            case 2 -> {
                 symbol = " - ";
                 yield a - b;
             }
