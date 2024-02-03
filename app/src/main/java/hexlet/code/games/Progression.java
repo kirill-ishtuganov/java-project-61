@@ -3,50 +3,53 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.StringJoiner;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Progression {
+
+    static final int MAX_PROGRESSION_SIZE = 10;
+    static  final  int MIN_PROGRESSION_SIZE = 5;
+    static final int MAX_PROGRESSION_STEP = 6;
     public static void start() {
-        String[][] questionsAndAnswers = new String[Engine.QUESTIONS][2];
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < questionsAndAnswers.length; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.getQuestion("What number is missing in the progression?", questionsAndAnswers);
+        Engine.askQuestions("What number is missing in the progression?", questionsAndAnswers);
     }
 
-    // max size of progression
-    static final int MAX = 10;
-    // min size of progression;
-    static  final  int MIN = 5;
-    // max size step;
-    static final int STEP = 6;
     public static String[] generateRoundData() {
         String[] questionAndAnswer = new String[2];
 
-        int prLength = Utils.getRandomNumber(MIN, MAX);
+        int prLength = Utils.getRandomNumber(MIN_PROGRESSION_SIZE, MAX_PROGRESSION_SIZE);
         int firstNumber = Utils.getRandomNumber();
-        int step = Utils.getRandomNumber(STEP);
+        int step = Utils.getRandomNumber(MAX_PROGRESSION_STEP);
         int missingIndex = Utils.getRandomNumber(prLength - 1);
+        String[] progression = generateProgression(prLength, firstNumber, step);
 
-        questionAndAnswer[0] = getProgression(prLength, firstNumber, step, missingIndex);
-        questionAndAnswer[1] = String.valueOf(firstNumber + (step * (missingIndex + 1)));
+        questionAndAnswer[1] = progression[missingIndex];
+        questionAndAnswer[0] = getProgressionWithMissingNumber(progression, missingIndex);
         return questionAndAnswer;
     }
 
-    public static String getProgression(int prLength, int firstNumber, int step, int missingIndex) {
-        StringJoiner joiner = new StringJoiner(" ");
-        joiner.add(String.valueOf(firstNumber));
+    public static String[] generateProgression(int prLength, int firstNumber, int step) {
+        String[] progression = new String[prLength];
+        progression[0] = String.valueOf(firstNumber);
         int currentNumber = firstNumber;
 
-        for (var i = 0; i < prLength; i++) {
-            if (i != missingIndex) {
-                currentNumber += step;
-                joiner.add(String.valueOf(currentNumber));
-            } else {
-                currentNumber += step;
-                joiner.add("..");
-            }
+        for (var i = 1; i < prLength; i++) {
+            currentNumber += step;
+            progression[i] = String.valueOf(currentNumber);
         }
-        return joiner.toString();
+        return progression;
+    }
+
+    public static String getProgressionWithMissingNumber(String[] progression, int missingIndex) {
+        progression[missingIndex] = "..";
+        List<String> strings = new LinkedList<>();
+        Collections.addAll(strings, progression);
+        return String.join(" ", strings);
     }
 }

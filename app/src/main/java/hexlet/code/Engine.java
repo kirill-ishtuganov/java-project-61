@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static final int QUESTIONS = 3;
+    public static final int NUMBER_OF_ROUNDS = 3;
 
-    public static void getQuestion(String rules, String[][] questionsAndAnswers) {
+    public static void askQuestions(String rules, String[][] questionsAndAnswers) {
         String userName = Cli.greet();
         System.out.println(rules);
 
