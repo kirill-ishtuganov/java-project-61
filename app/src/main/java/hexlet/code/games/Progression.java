@@ -3,15 +3,12 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Progression {
 
     static final int MAX_PROGRESSION_SIZE = 10;
     static  final  int MIN_PROGRESSION_SIZE = 5;
     static final int MAX_PROGRESSION_STEP = 6;
+
     public static void start() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < questionsAndAnswers.length; i++) {
@@ -48,8 +45,6 @@ public class Progression {
 
     public static String getProgressionWithMissingNumber(String[] progression, int missingIndex) {
         progression[missingIndex] = "..";
-        List<String> strings = new LinkedList<>();
-        Collections.addAll(strings, progression);
-        return String.join(" ", strings);
+        return String.join(" ", progression);
     }
 }

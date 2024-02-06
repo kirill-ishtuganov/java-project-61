@@ -22,16 +22,16 @@ public class Calc {
         int symbolIndex = Utils.getRandomNumber(0, AVAILABLE_OPERATIONS.length);
 
         questionAndAnswer[0] = a + " " + AVAILABLE_OPERATIONS[symbolIndex] + " " + b;
-        questionAndAnswer[1] = String.valueOf(calculate(a, b, symbolIndex));
+        questionAndAnswer[1] = String.valueOf(calculate(a, b, AVAILABLE_OPERATIONS[symbolIndex]));
         return questionAndAnswer;
     }
 
-    public static int calculate(int a, int b, int symbolIndex) {
-        return switch (symbolIndex) {
-            case 0 -> a + b;
-            case 1 -> a - b;
-            case 2 -> a * b;
-            default -> throw new RuntimeException("Unexpected value: " + symbolIndex);
+    public static int calculate(int a, int b, char symbol) {
+        return switch (symbol) {
+            case '+' -> a + b;
+            case '-' -> a - b;
+            case '*' -> a * b;
+            default -> throw new RuntimeException("Unexpected value: " + symbol);
         };
     }
 }
