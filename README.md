@@ -1,4 +1,4 @@
-[!][Actions Status](https://github.com/wavecloudzzz/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)
+[![Actions Status](https://github.com/wavecloudzzz/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)
 
 (https://github.com/wavecloudzzz/java-project-61/actions)
 
